@@ -20,3 +20,4 @@ src/assets/svg/aptos_explorer_svg.zip
 .editorconfig
 .node-version
 .npmrc
+.gitignore
