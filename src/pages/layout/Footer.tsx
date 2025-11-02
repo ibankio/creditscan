@@ -4,7 +4,6 @@ import GithubLogo from "../../assets/github.svg?react";
 import DiscordLogo from "../../assets/discord.svg?react";
 import TwitterLogo from "../../assets/twitter.svg?react";
 import MediumLogo from "../../assets/medium.svg?react";
-import LinkedInLogo from "../../assets/linkedin.svg?react";
 import {grey} from "../../themes/colors/libra2ColorPalette";
 import SvgIcon from "@mui/material/SvgIcon";
 
@@ -12,19 +11,14 @@ import LogoFull from "../../assets/svg/libra2_logo_labs.svg?react";
 import {Link} from "../../routing";
 
 const socialLinks = [
-  {title: "Git", url: "https://github.com/aptos-labs", icon: GithubLogo},
+  {title: "Git", url: "https://github.com/libra2org", icon: GithubLogo},
   {
     title: "Discord",
-    url: "https://discord.com/invite/aptosnetwork",
+    url: "https://discord.gg/EsM3qmXVcx",
     icon: DiscordLogo,
   },
-  {title: "Twitter", url: "https://x.com/aptoslabs/", icon: TwitterLogo},
-  {title: "Medium", url: "https://aptoslabs.medium.com/", icon: MediumLogo},
-  {
-    title: "LinkedIn",
-    url: "https://www.linkedin.com/company/aptoslabs/",
-    icon: LinkedInLogo,
-  },
+  {title: "Twitter", url: "https://x.com/libra2/", icon: TwitterLogo},
+  {title: "Medium", url: "https://libra2.medium.com/", icon: MediumLogo},
 ];
 
 export default function Footer() {
@@ -55,9 +49,9 @@ export default function Footer() {
           >
             <Link
               color="inherit"
-              to="https://aptoslabs.com/"
+              to="https://www.libra2.org/"
               target="_blank"
-              title="Aptos Labs"
+              title="Libra2 Research"
               sx={{width: "8rem", mr: {md: 2}}}
             >
               <LogoFull />
@@ -75,7 +69,7 @@ export default function Footer() {
               >
                 © {new Date().getFullYear()}{" "}
                 <Box component="span" sx={{whiteSpace: "nowrap"}}>
-                  Aptos Labs
+                  Libra2 Research
                 </Box>
               </Typography>
               <Stack
@@ -85,7 +79,7 @@ export default function Footer() {
               >
                 <Link
                   color="inherit"
-                  to="https://aptoslabs.com/privacy"
+                  to="https://www.libra2.org/privacy"
                   target="_blank"
                   sx={{
                     fontSize: "0.8rem",
@@ -96,7 +90,7 @@ export default function Footer() {
                 </Link>
                 <Link
                   color="inherit"
-                  to="https://aptoslabs.com/terms"
+                  to="https://www.libra2.org/terms"
                   target="_blank"
                   sx={{
                     fontSize: "0.8rem",

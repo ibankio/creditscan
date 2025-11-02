@@ -363,9 +363,9 @@ function StakeOperationDialogContent({
       <DialogContent sx={{textAlign: "center"}}>
         <Typography variant="caption" color={grey[450]}>
           <div>
-            Please do your own research. Aptos Labs is not responsible for the
-            performance of the validator nodes displayed here, or the security
-            of your funds
+            Please do your own research. Libra2 Research is not responsible for
+            the performance of the validator nodes displayed here, or the
+            security of your funds
           </div>
         </Typography>
       </DialogContent>
@@ -424,8 +424,8 @@ function StakeOperationDialogContent({
       <DialogContent sx={{textAlign: "center"}}>
         <Typography variant="caption" color={grey[450]}>
           <div>
-            Please do your own research. Aptos Labs is not responsible for the
-            security of your funds
+            Please do your own research. Libra2 Research is not responsible for
+            the security of your funds
           </div>
         </Typography>
       </DialogContent>
@@ -476,8 +476,8 @@ function StakeOperationDialogContent({
       <DialogContent sx={{textAlign: "center"}}>
         <Typography variant="caption" color={grey[450]}>
           <div>
-            Please do your own research. Aptos Labs is not responsible for the
-            security of your funds
+            Please do your own research. Libra2 Research is not responsible for
+            the security of your funds
           </div>
         </Typography>
       </DialogContent>

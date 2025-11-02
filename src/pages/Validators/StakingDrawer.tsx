@@ -197,10 +197,10 @@ const faqValidatorData = [
         1M APT. Only active validators will earn rewards.
         <br />
         <br />
-        However, please do your own research, Aptos labs is not responsible for
-        the veracity of the information displayed, nor responsible for the
-        security of your funds, past or future performance of the validator
-        node.
+        However, please do your own research, Libra2 Researchs is not
+        responsible for the veracity of the information displayed, nor
+        responsible for the security of your funds, past or future performance
+        of the validator node.
       </React.Fragment>
     ),
   },
