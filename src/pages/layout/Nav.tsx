@@ -71,7 +71,7 @@ export default function Nav() {
       <NavButton
         to="/ai-agent-view"
         title="View AI Agent Behavior"
-        label="AI Agent View"
+        label="Agents"
       />
     </Box>
   );
