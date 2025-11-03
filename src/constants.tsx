@@ -4,12 +4,9 @@ import {CoinDescription} from "./api/hooks/useGetCoinList";
  * Network
  */
 export const networks: Record<string, string> = {
-  mainnet:
-    import.meta.env.LIBRA2_MAINNET_URL || "https://mainnet.libra2.org",
-  testnet:
-    import.meta.env.LIBRA2_TESTNET_URL || "https://testnet.libra2.org",
-  devnet:
-    import.meta.env.LIBRA2_DEVNET_URL || "https://devnet.libra2.org",
+  mainnet: import.meta.env.LIBRA2_MAINNET_URL || "https://mainnet.libra2.org",
+  testnet: import.meta.env.LIBRA2_TESTNET_URL || "https://testnet.libra2.org",
+  devnet: import.meta.env.LIBRA2_DEVNET_URL || "https://devnet.libra2.org",
   local: import.meta.env.LIBRA2_LOCAL_URL || "http://127.0.0.1:8080",
   localnet:
     import.meta.env.LIBRA2_LOCALNET_URL ||
@@ -27,8 +24,8 @@ type ApiKeys = {
 
 /**
  * Public Client IDs (API keys) from API Gateway. For mainnet, these come from the prod
- * API Gateway (developers.aptoslabs.com), for testnet and devnet these come from the
- * staging API Gateway (staging.developers.aptoslabs.com).
+ * API Gateway (developers.libra2.org), for testnet and devnet these come from the
+ * staging API Gateway (staging.developers.libra2.org).
  *
  * These keys are all generated using the petra@aptoslabs.com account. Learn more:
  * https://www.notion.so/aptoslabs/API-Gateway-FAQ-for-product-owners-183b29ba6bed41f8922e6049d9d36486
@@ -884,7 +881,7 @@ export const supplyLimitOverrides: Record<string, bigint> = {
   "0x967adbf2e05fe665ab86a3bf2c4acfa39fbf62097963474ef70a0786dae8cfa2::NRUH::NRUH":
     1000000000000000n, // Caps burned at creation
   "0x4fbed3f8a3fd8a11081c8b6392152a8b0cb14d70d0414586f0c9b858fcd2d6a7::UPTOS::UPTOS":
-    8888888888800000000n, // Caps burned at https://explorer.aptoslabs.com/txn/0x4594e752ad872dd4d6fcdcdfe5a226de3556864dfa825bf77d90df810f25257e?network=mainnet no mints since
+    8888888888800000000n, // Caps burned at https://explorer.libra2.org/txn/0x4594e752ad872dd4d6fcdcdfe5a226de3556864dfa825bf77d90df810f25257e?network=mainnet no mints since
 };
 
 export const EMOJICOIN_REGISTRY_ADDRESS =
