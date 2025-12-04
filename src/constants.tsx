@@ -4,7 +4,11 @@ import {CoinDescription} from "./api/hooks/useGetCoinList";
  * Network
  */
 export const networks: Record<string, string> = {
-  mainnet: import.meta.env.LIBRA2_MAINNET_URL || "https://mainnet.libra2.org",
+  mainnet:
+    import.meta.env.LIBRA2_MAINNET_URL ||
+    import.meta.env.VITE_LIBRA2_NODE_URL ||
+    "https://rpc.libra2.org" ||
+    "https://mainnet.libra2.org",
   testnet: import.meta.env.LIBRA2_TESTNET_URL || "https://testnet.libra2.org",
   devnet: import.meta.env.LIBRA2_DEVNET_URL || "https://devnet.libra2.org",
   local: import.meta.env.LIBRA2_LOCAL_URL || "http://127.0.0.1:8080",

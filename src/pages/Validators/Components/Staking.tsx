@@ -9,9 +9,9 @@ import {useGetStakingRewardsRate} from "../../../api/hooks/useGetStakingRewardsR
 import {StyledLearnMoreTooltip} from "../../../components/StyledTooltip";
 
 export const REWARDS_TOOLTIP_TEXT =
-  "Represents the Annual Percentage Rate (APR) that accrue on staked APT. Rewards are paid out by the network after each Epoch. APR is subject to change based on validator performance or in accordance with network specifications. There is no guarantee that the current APR will continue to apply in future periods.";
+  "Represents the Annual Percentage Rate (APR) that accrue on staked LBT. Rewards are paid out by the network after each Epoch. APR is subject to change based on validator performance or in accordance with network specifications. There is no guarantee that the current APR will continue to apply in future periods.";
 export const REWARDS_LEARN_MORE_LINK =
-  "https://aptos.dev/en/network/blockchain/staking#rewards";
+  "https://www.libra2.org/en/network/blockchain/staking#rewards";
 
 type StakingProps = {
   isSkeletonLoading: boolean;
@@ -29,7 +29,7 @@ export default function Staking({isSkeletonLoading}: StakingProps) {
             ? getFormattedBalanceStr(totalVotingPower, undefined, 0)
             : "-"}
         </Subtitle>
-        <Body color="inherit">APT Staked</Body>
+        <Body color="inherit">LBT Staked</Body>
       </Stack>
       <Stack direction="row" spacing={1} alignItems="center">
         <Body>{`${rewardsRateYearly}% APR Reward`}</Body>{" "}
