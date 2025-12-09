@@ -15,20 +15,28 @@ function getIsGraphqlClientSupportedFor(networkName: NetworkName): boolean {
   return typeof graphqlUri === "string" && graphqlUri.length > 0;
 }
 
-export function getGraphqlURI(networkName: NetworkName): string | undefined {
-  switch (networkName) {
-    case "mainnet":
-      return "https://mainnet.libra2.org/v1/graphql";
-    case "testnet":
-      return "https://testnet.libra2.org/v1/graphql";
-    case "devnet":
-      return "https://devnet.libra2.org/v1/graphql";
-    case "local":
-    case "localnet":
-      return "http://127.0.0.1:8090/v1/graphql";
-    default:
-      return undefined;
+function getIndexerBaseUrl(networkName: NetworkName): string | undefined {
+  const defaultIndexer =
+    import.meta.env.VITE_LIBRA2_INDEXER_HTTP ?? "https://indexer.libra2.org";
+
+  if (networkName === "local" || networkName === "localnet") {
+    return (
+      import.meta.env.VITE_LIBRA2_LOCAL_INDEXER_HTTP ??
+      import.meta.env.LIBRA2_LOCAL_INDEXER_HTTP ??
+      defaultIndexer
+    );
   }
+
+  return defaultIndexer;
+}
+
+export function getGraphqlURI(networkName: NetworkName): string | undefined {
+  const baseUrl = getIndexerBaseUrl(networkName);
+  if (!baseUrl) return undefined;
+
+  const normalizedBase = baseUrl.endsWith("/") ? baseUrl.slice(0, -1) : baseUrl;
+
+  return `${normalizedBase}/v1/graphql`;
 }
 
 function getGraphqlClient(
