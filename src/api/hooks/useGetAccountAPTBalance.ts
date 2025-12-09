@@ -1,6 +1,7 @@
 import {Types} from "aptos";
 import {useQuery} from "@tanstack/react-query";
 import {useGlobalState} from "../../global-config/GlobalConfig";
+import {Network, networks} from "../../constants";
 
 export function useGetAccountAPTBalance(
   address: Types.Address,
@@ -14,17 +15,21 @@ export function useGetAccountAPTBalance(
     queryFn: async () => {
       const type = coinType ?? ("0x1::aptos_coin::AptosCoin" as const);
 
-      // 取 REST 基地址（按你项目字段来，兜底到本地 8080）
+      // Prefer configured URLs; fall back to mainnet RPC instead of localhost.
       const baseUrl =
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         (state as any)?.network_value?.api_url ??
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         (state as any)?.network_value?.node_url ??
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         (state as any)?.sdk_v2_client?.config?.client?.baseUrl ??
-        "http://127.0.0.1:8080";
+        networks[Network.MAINNET];
 
-      const resp = await fetch(`${baseUrl}/v1/view`, {
+      const normalizedBase = baseUrl.endsWith("/")
+        ? baseUrl.slice(0, -1)
+        : baseUrl;
+
+      const resp = await fetch(`${normalizedBase}/view`, {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({

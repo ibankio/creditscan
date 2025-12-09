@@ -1,21 +1,33 @@
 import {CoinDescription} from "./api/hooks/useGetCoinList";
 
+const DEFAULT_RPC_URL = "https://rpc.libra2.org/v1";
+
+function normalizeUrl(url?: string) {
+  if (!url) return DEFAULT_RPC_URL;
+  return url.endsWith("/") ? url.slice(0, -1) : url;
+}
+
 /**
  * Network
  */
 export const networks: Record<string, string> = {
-  mainnet:
-    import.meta.env.LIBRA2_MAINNET_URL ||
-    import.meta.env.VITE_LIBRA2_NODE_URL ||
-    "https://rpc.libra2.org" ||
-    "https://mainnet.libra2.org",
-  testnet: import.meta.env.LIBRA2_TESTNET_URL || "https://testnet.libra2.org",
-  devnet: import.meta.env.LIBRA2_DEVNET_URL || "https://devnet.libra2.org",
-  local: import.meta.env.LIBRA2_LOCAL_URL || "http://127.0.0.1:8080",
-  localnet:
-    import.meta.env.LIBRA2_LOCALNET_URL ||
-    import.meta.env.LIBRA2_LOCAL_URL ||
-    "http://127.0.0.1:8080",
+  mainnet: normalizeUrl(
+    import.meta.env.LIBRA2_MAINNET_URL ??
+      import.meta.env.VITE_LIBRA2_NODE_URL ??
+      DEFAULT_RPC_URL,
+  ),
+  testnet: normalizeUrl(import.meta.env.LIBRA2_TESTNET_URL ?? DEFAULT_RPC_URL),
+  devnet: normalizeUrl(import.meta.env.LIBRA2_DEVNET_URL ?? DEFAULT_RPC_URL),
+  local: normalizeUrl(
+    import.meta.env.LIBRA2_LOCAL_URL ??
+      import.meta.env.LIBRA2_LOCALNET_URL ??
+      DEFAULT_RPC_URL,
+  ),
+  localnet: normalizeUrl(
+    import.meta.env.LIBRA2_LOCALNET_URL ??
+      import.meta.env.LIBRA2_LOCAL_URL ??
+      DEFAULT_RPC_URL,
+  ),
 };
 
 export const hiddenNetworks = ["localnet"];
