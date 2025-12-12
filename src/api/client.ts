@@ -25,6 +25,14 @@ export async function withResponseError<T>(promise: Promise<T>): Promise<T> {
         throw {type: ResponseErrorType.NOT_FOUND};
       }
     }
+    if (message?.toLowerCase().includes("indexer reader doesn't exist")) {
+      throw {
+        type: ResponseErrorType.INDEXER_UNAVAILABLE,
+        message:
+          "Indexer backend is unavailable. Please ensure the indexer service is running for this network or try again later.",
+      };
+    }
+
     if (
       errorMessage
         .toLowerCase()
