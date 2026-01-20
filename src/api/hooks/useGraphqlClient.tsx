@@ -17,7 +17,10 @@ function getIsGraphqlClientSupportedFor(networkName: NetworkName): boolean {
 
 function getIndexerBaseUrl(networkName: NetworkName): string | undefined {
   const defaultIndexer =
-    import.meta.env.VITE_LIBRA2_INDEXER_HTTP ?? "https://indexer.libra2.org";
+    import.meta.env.VITE_INDEXER_URL ??
+    import.meta.env.INDEXER_URL ??
+    import.meta.env.VITE_LIBRA2_INDEXER_HTTP ??
+    "https://indexer.libra2.org";
 
   if (networkName === "local" || networkName === "localnet") {
     return (
@@ -35,6 +38,13 @@ export function getGraphqlURI(networkName: NetworkName): string | undefined {
   if (!baseUrl) return undefined;
 
   const normalizedBase = baseUrl.endsWith("/") ? baseUrl.slice(0, -1) : baseUrl;
+
+  if (
+    normalizedBase.endsWith("/v1/graphql") ||
+    normalizedBase.endsWith("/graphql")
+  ) {
+    return normalizedBase;
+  }
 
   return `${normalizedBase}/v1/graphql`;
 }
