@@ -1,9 +1,29 @@
 import {Types} from "aptos";
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
-import {getAccountResource} from "..";
-import {ResponseError} from "../client";
+import {ResponseError, ResponseErrorType} from "../client";
 import {useGlobalState} from "../../global-config/GlobalConfig";
 import {orderBy} from "lodash";
+import {fetchIndexerGraphql} from "../indexerGraphql";
+import {tryStandardizeAddress} from "../../utils";
+
+type IndexerAccountResourceResponse = {
+  move_resources: Array<{
+    type: string;
+    data: Types.MoveResource["data"];
+  }>;
+};
+
+const ACCOUNT_RESOURCE_QUERY = `
+  query AccountResource($address: String, $type: String) {
+    move_resources(
+      where: {address: {_eq: $address}, type: {_eq: $type}}
+      limit: 1
+    ) {
+      type
+      data
+    }
+  }
+`;
 
 export type ModuleMetadata = {
   name: string;
@@ -30,6 +50,18 @@ export type PackageMetadata = {
   manifest: string;
 };
 
+function normalizeResourceType(resource: string): string {
+  const [addressPart, ...rest] = resource.split("::");
+  if (!addressPart || rest.length === 0) {
+    return resource;
+  }
+  const standardized = tryStandardizeAddress(addressPart);
+  if (!standardized) {
+    return resource;
+  }
+  return `${standardized}::${rest.join("::")}`;
+}
+
 export function useGetAccountResource(
   address: string | undefined,
   resource: string,
@@ -42,10 +74,27 @@ export function useGetAccountResource(
       if (!address) {
         throw new Error("Address is undefined");
       }
-      return await getAccountResource(
-        {address, resourceType: resource},
-        state.aptos_client,
+      const standardized = tryStandardizeAddress(address);
+      if (!standardized) {
+        throw {
+          type: ResponseErrorType.INVALID_INPUT,
+          message: `Invalid address '${address}'`,
+        };
+      }
+      const normalizedResource = normalizeResourceType(resource);
+      const data = await fetchIndexerGraphql<IndexerAccountResourceResponse>(
+        state.network_name,
+        ACCOUNT_RESOURCE_QUERY,
+        {address: standardized, type: normalizedResource},
       );
+      const resourceData = data.move_resources[0];
+      if (!resourceData) {
+        throw {type: ResponseErrorType.NOT_FOUND};
+      }
+      return {
+        type: resourceData.type,
+        data: resourceData.data,
+      };
     },
     refetchOnWindowFocus: false,
   });
