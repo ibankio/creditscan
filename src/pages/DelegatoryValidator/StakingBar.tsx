@@ -24,7 +24,7 @@ import {
   useGetDelegationNodeInfo,
 } from "../../api/hooks/delegations";
 import {DelegationStateContext} from "./context/DelegationContext";
-import {useGetAccountLBTBalance} from "../../api/hooks/useGetAccountLBTBalance";
+import {useGetAccountLBTBalance} from "../../api/hooks/useGetAccountAPTBalance";
 import {MINIMUM_APT_IN_POOL_FOR_EXPLORER} from "./constants";
 import {OCTA} from "../../constants";
 import {Types} from "aptos";
@@ -177,7 +177,7 @@ function StakingBarContent({
 
   const stakeButton = (
     <StyledTooltip
-      title={`You can't stake because minimum 11 APT requirement is not met`}
+      title={`You can't stake because minimum 11 LBT requirement is not met`}
       disableHoverListener={!buttonDisabled}
     >
       <span>

@@ -63,7 +63,7 @@ export default function TransactionSucceededDialog({
             <Typography variant="body2" sx={{fontSize: 12}}>
               {"You've successfully unlocked "}
               <span style={{fontWeight: 600}}>{amount}</span>
-              {" APT"}
+              {" LBT"}
             </Typography>
           </Box>
         );
@@ -73,7 +73,7 @@ export default function TransactionSucceededDialog({
             <Typography variant="body2" sx={{fontSize: 12}}>
               {"You've successfully withdrawn "}
               <span style={{fontWeight: 600}}>{amount}</span>
-              {" APT"}
+              {" LBT"}
             </Typography>
           </Box>
         );
@@ -87,7 +87,7 @@ export default function TransactionSucceededDialog({
             <Typography variant="body2" sx={{fontSize: 12}}>
               {"Soon you will see your deposit of "}
               <span style={{fontWeight: 600}}>{amount}</span>
-              {" APT in the staking pool."}
+              {" LBT in the staking pool."}
             </Typography>
           </Box>
         );
