@@ -47,7 +47,7 @@ export default function BalanceCard({
     })();
   }, [isAPT]);
 
-  const sym = symbol ?? (isAPT ? "APT" : "LBT");
+  const sym = symbol ?? "LBT";
   const balanceUSD =
     isAPT && balance.data && price !== null
       ? (Number(balance.data) * Number(price)) / 1e8
@@ -100,7 +100,7 @@ export default function BalanceCard({
           <StyledTooltip
             title={`This balance reflects the amount of ${sym} tokens held in your wallet${
               isAPT && globalState.network_name === "mainnet"
-                ? ` and their live value in USD at a rate of 1 APT = $${price?.toFixed(2)}`
+                ? ` and their live value in USD at a rate of 1 LBT = $${price?.toFixed(2)}`
                 : ""
             }.`}
           >
