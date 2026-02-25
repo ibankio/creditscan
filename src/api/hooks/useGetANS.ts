@@ -24,8 +24,8 @@ function getFetchNameUrl(
   }
 
   return isPrimary
-    ? `https://www.aptosnames.com/api/${network}/v1/primary-name/${address}`
-    : `https://www.aptosnames.com/api/${network}/v1/name/${address}`;
+    ? `https://names.creditchain.org/api/${network}/v1/primary-name/${address}`
+    : `https://names.creditchain.org/api/${network}/v1/name/${address}`;
 }
 
 export function useGetNameFromAddress(

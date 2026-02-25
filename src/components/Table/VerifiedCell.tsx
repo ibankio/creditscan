@@ -15,7 +15,7 @@ import * as React from "react";
 import {
   codeBlockColor,
   codeBlockColorClickableOnHover,
-} from "../../themes/colors/libra2ColorPalette";
+} from "../../themes/colors/creditchainColorPalette";
 import {BUTTON_HEIGHT} from "../TitleHashButton";
 import {useGlobalState} from "../../global-config/GlobalConfig";
 import {
@@ -155,7 +155,7 @@ export function getVerifiedMessageAndIcon(
   let icon = null;
   switch (level) {
     case VerifiedType.NATIVE_TOKEN:
-      tooltipMessage = `This asset is verified as a native token of Libra2.`;
+      tooltipMessage = `This asset is verified as a native token of CreditChain.`;
       icon = <VerifiedUser fontSize="small" color="info" />;
       break;
     case VerifiedType.LABS_VERIFIED:

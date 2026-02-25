@@ -5,7 +5,7 @@ import ContentBox from "../../../components/IndividualPageContent/ContentBox";
 import ContentRow from "../../../components/IndividualPageContent/ContentRow";
 import EmptyTabContent from "../../../components/IndividualPageContent/EmptyTabContent";
 import {getLearnMoreTooltip} from "../../Transaction/helpers";
-import {grey} from "../../../themes/colors/libra2ColorPalette";
+import {grey} from "../../../themes/colors/creditchainColorPalette";
 import {tryStandardizeAddress} from "../../../utils";
 
 type InfoTabProps = {

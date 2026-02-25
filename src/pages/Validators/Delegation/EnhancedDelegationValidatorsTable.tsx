@@ -19,7 +19,10 @@ import GeneralTableHeaderCell from "../../../components/Table/GeneralTableHeader
 import GeneralTableBody from "../../../components/Table/GeneralTableBody";
 import {useWallet} from "@aptos-labs/wallet-adapter-react";
 import {Types} from "aptos";
-import {libra2Color, grey} from "../../../themes/colors/libra2ColorPalette";
+import {
+  creditchainColor,
+  grey,
+} from "../../../themes/colors/creditchainColorPalette";
 import {useGetValidatorSet} from "../../../api/hooks/useGetValidatorSet";
 import {ValidatorAddrCell, OperatorAddrCell} from "../ValidatorsTable";
 import {addressFromWallet, assertNever} from "../../../utils";
@@ -419,9 +422,9 @@ function DelegatedAmountCell({
               height: 4,
               borderRadius: 2,
               flexGrow: 1,
-              backgroundColor: alpha(libra2Color, 0.1),
+              backgroundColor: alpha(creditchainColor, 0.1),
               "& .MuiLinearProgress-bar": {
-                backgroundColor: libra2Color,
+                backgroundColor: creditchainColor,
               },
             }}
           />

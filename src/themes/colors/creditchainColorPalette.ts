@@ -27,7 +27,7 @@ export const primary = {
   900: "#00034d",
 };
 
-export const libra2Color = primary[600];
+export const creditchainColor = primary[600];
 export const negativeColor: string = "#F97373";
 export const warningColor: string = "#f1c232";
 

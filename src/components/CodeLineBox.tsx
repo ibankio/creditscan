@@ -3,7 +3,7 @@ import {Box, SxProps, Theme, useTheme} from "@mui/material";
 import {
   codeBlockColor,
   codeBlockColorClickableOnHover,
-} from "../themes/colors/libra2ColorPalette";
+} from "../themes/colors/creditchainColorPalette";
 
 const TEXT_COLOR_LIGHT = "#0EA5E9";
 const TEXT_COLOR_DARK = "#83CCED";

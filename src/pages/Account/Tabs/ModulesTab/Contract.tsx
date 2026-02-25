@@ -29,7 +29,7 @@ import {useParams} from "react-router-dom";
 import useSubmitTransaction from "../../../../api/hooks/useSubmitTransaction";
 import {useGlobalState} from "../../../../global-config/GlobalConfig";
 import {view} from "../../../../api";
-import {grey} from "../../../../themes/colors/libra2ColorPalette";
+import {grey} from "../../../../themes/colors/creditchainColorPalette";
 import {Link, useNavigate} from "../../../../routing";
 import {Code} from "../../Components/CodeSnippet";
 import {
@@ -542,7 +542,7 @@ function ReadContractForm({
     try {
       const result = await view(
         viewRequest,
-        state.aptos_client,
+        state.creditchain_client,
         data.ledgerVersion,
       );
       setResult(result);

@@ -22,11 +22,11 @@ export function useGetDelegatorStakeInfo(
       validatorAddress,
     ],
     queryFn: () =>
-      getStake(state.aptos_client, delegatorAddress, validatorAddress),
+      getStake(state.creditchain_client, delegatorAddress, validatorAddress),
     enabled:
       !!delegatorAddress &&
       !!validatorAddress &&
-      !!state.aptos_client &&
+      !!state.creditchain_client &&
       areAddressesValid,
   });
 

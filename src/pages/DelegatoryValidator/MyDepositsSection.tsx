@@ -293,7 +293,7 @@ function MyDepositSectionContent({
   useEffect(() => {
     async function fetchData() {
       const canWithdraw = await getCanWithdrawPendingInactive(
-        state.aptos_client,
+        state.creditchain_client,
         validator!.owner_address,
       );
       setCanWithdrawPendingInactive(canWithdraw[0]);
@@ -302,7 +302,7 @@ function MyDepositSectionContent({
   }, [
     validator.owner_address,
     state.network_value,
-    state.aptos_client,
+    state.creditchain_client,
     validator,
   ]);
 

@@ -13,7 +13,8 @@ export function useGetAccountAPTBalance(
     queryKey: ["coinBalance_rawView", {address, coinType}, state.network_value],
     retry: false,
     queryFn: async () => {
-      const type = coinType ?? ("0x1::libra2_coin::Libra2Coin" as const);
+      const type =
+        coinType ?? ("0x1::creditchain_coin::CreditChainCoin" as const);
 
       // Prefer configured URLs; fall back to mainnet RPC instead of localhost.
       const baseUrl =

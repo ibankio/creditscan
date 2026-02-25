@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 import React from "react";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
-import {grey} from "../themes/colors/libra2ColorPalette";
+import {grey} from "../themes/colors/creditchainColorPalette";
 
 interface StyledTooltipProps extends TooltipProps {
   title: NonNullable<React.ReactNode>;

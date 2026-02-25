@@ -18,6 +18,6 @@ export function useGetAccountTransactions(
       state.network_value,
     ],
     queryFn: () =>
-      getAccountTransactions({address, start, limit}, state.aptos_client),
+      getAccountTransactions({address, start, limit}, state.creditchain_client),
   });
 }

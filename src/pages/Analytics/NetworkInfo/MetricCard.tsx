@@ -1,6 +1,6 @@
 import React from "react";
 import {Typography, Stack, useTheme} from "@mui/material";
-import {grey} from "../../../themes/colors/libra2ColorPalette";
+import {grey} from "../../../themes/colors/creditchainColorPalette";
 import {CardWithStyle} from "../../../components/Card";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import StyledTooltip from "../../../components/StyledTooltip";

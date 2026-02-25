@@ -11,7 +11,7 @@ import {useContext, useEffect, useState} from "react";
 import ContentBoxSpaceBetween from "../../components/IndividualPageContent/ContentBoxSpaceBetween";
 import {APTCurrencyValue} from "../../components/IndividualPageContent/ContentValue/CurrencyValue";
 import ArrowCircleUpIcon from "@mui/icons-material/ArrowCircleUp";
-import {grey} from "../../themes/colors/libra2ColorPalette";
+import {grey} from "../../themes/colors/creditchainColorPalette";
 import {useWallet} from "@aptos-labs/wallet-adapter-react";
 import WalletConnectionDialog from "./WalletConnectionDialog";
 import StyledTooltip, {
@@ -166,14 +166,14 @@ function StakingBarContent({
   useEffect(() => {
     async function fetchData() {
       const fee = await getAddStakeFee(
-        state.aptos_client,
+        state.creditchain_client,
         validator!.owner_address,
         MINIMUM_APT_IN_POOL_FOR_EXPLORER.toString(),
       );
       setAddStakeFee(fee[0]);
     }
     fetchData();
-  }, [state.network_value, state.aptos_client, balance, validator]);
+  }, [state.network_value, state.creditchain_client, balance, validator]);
 
   const stakeButton = (
     <StyledTooltip

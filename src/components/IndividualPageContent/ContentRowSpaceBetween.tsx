@@ -1,6 +1,6 @@
 import React from "react";
 import {Box, Stack, Typography} from "@mui/material";
-import {grey} from "../../themes/colors/libra2ColorPalette";
+import {grey} from "../../themes/colors/creditchainColorPalette";
 import EmptyValue from "./ContentValue/EmptyValue";
 
 type ContentRowSmallProps = {

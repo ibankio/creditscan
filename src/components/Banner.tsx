@@ -12,7 +12,7 @@ import {
 } from "@mui/material";
 import React, {useState} from "react";
 import CloseIcon from "@mui/icons-material/Close";
-import AptosBannerImage from "../assets/Banner.jpg";
+import CreditChainBannerImage from "../assets/Banner.jpg";
 
 type PillColors =
   | "primary"
@@ -101,7 +101,10 @@ export function Banner({
       <Box sx={[...(Array.isArray(sx) ? sx : [sx])]}>
         {isOnMobile ? (
           <Alert
-            sx={{backgroundImage: `url(${AptosBannerImage})`, borderRadius: 1}}
+            sx={{
+              backgroundImage: `url(${CreditChainBannerImage})`,
+              borderRadius: 1,
+            }}
             icon={false}
             action={
               <Stack
@@ -129,7 +132,10 @@ export function Banner({
           </Alert>
         ) : (
           <Alert
-            sx={{backgroundImage: `url(${AptosBannerImage})`, borderRadius: 1}}
+            sx={{
+              backgroundImage: `url(${CreditChainBannerImage})`,
+              borderRadius: 1,
+            }}
             icon={false}
             action={
               <Stack

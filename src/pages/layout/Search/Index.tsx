@@ -103,7 +103,7 @@ export default function HeaderSearch() {
     const address = searchText.split("::")[0];
     return getAccountResource(
       {address, resourceType: `0x1::coin::CoinInfo<${searchText}>`},
-      state.aptos_client,
+      state.creditchain_client,
     )
       .then(() => {
         return {
@@ -152,7 +152,7 @@ export default function HeaderSearch() {
       });
     const transactionByVersion = getTransaction(
       {txnHashOrVersion: num},
-      state.aptos_client,
+      state.creditchain_client,
     )
       .then((): SearchResult => {
         return {
@@ -173,7 +173,10 @@ export default function HeaderSearch() {
   async function handleTransaction(
     searchText: string,
   ): Promise<SearchResult | null> {
-    return getTransaction({txnHashOrVersion: searchText}, state.aptos_client)
+    return getTransaction(
+      {txnHashOrVersion: searchText},
+      state.creditchain_client,
+    )
       .then((): SearchResult => {
         return {
           label: `Transaction ${searchText}`,
@@ -195,7 +198,7 @@ export default function HeaderSearch() {
     }
 
     // It's either an account OR an object: we query both at once to save time
-    const accountPromise = getAccount({address}, state.aptos_client)
+    const accountPromise = getAccount({address}, state.creditchain_client)
       .then((): SearchResult => {
         return {
           label: `Account ${address}`,
@@ -209,7 +212,7 @@ export default function HeaderSearch() {
     // TODO: Add searching the coin list first
     const faPromise = getAccountResource(
       {address, resourceType: faMetadataResource},
-      state.aptos_client,
+      state.creditchain_client,
     ).then(
       () => {
         return {
@@ -224,7 +227,7 @@ export default function HeaderSearch() {
     );
     const resourcePromise = getAccountResource(
       {address, resourceType: objectCoreResource},
-      state.aptos_client,
+      state.creditchain_client,
     ).then(
       () => {
         return {
@@ -239,7 +242,7 @@ export default function HeaderSearch() {
     );
     const anyResourcePromise = getAccountResources(
       {address},
-      state.aptos_client,
+      state.creditchain_client,
     ).then(
       () => {
         return {
@@ -372,7 +375,7 @@ export default function HeaderSearch() {
     const {marketAddress, coin, lp} = emojicoinData;
     return getAccount(
       {address: marketAddress.toString()},
-      state.aptos_client,
+      state.creditchain_client,
     ).then(() => {
       return [
         {

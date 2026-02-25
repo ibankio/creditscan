@@ -9,6 +9,6 @@ export function useGetTransaction(txnHashOrVersion: string) {
 
   return useQuery<Types.Transaction, ResponseError>({
     queryKey: ["transaction", {txnHashOrVersion}, state.network_value],
-    queryFn: () => getTransaction({txnHashOrVersion}, state.aptos_client),
+    queryFn: () => getTransaction({txnHashOrVersion}, state.creditchain_client),
   });
 }

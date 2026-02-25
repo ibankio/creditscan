@@ -15,7 +15,7 @@ import {
   codeBlockColorClickableOnHover,
   grey,
   primary,
-} from "../themes/colors/libra2ColorPalette";
+} from "../themes/colors/creditchainColorPalette";
 import ChevronRightRoundedIcon from "@mui/icons-material/ChevronRightRounded";
 import ChevronLeftRoundedIcon from "@mui/icons-material/ChevronLeftRounded";
 import {

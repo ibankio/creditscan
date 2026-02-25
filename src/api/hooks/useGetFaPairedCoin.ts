@@ -22,7 +22,7 @@ export function useGetFaPairedCoin(
     queryKey: ["pairedCoin", address, state.network_value],
     queryFn: async () => {
       if (isValidAccountAddress(address)) {
-        const data = await view(request, state.aptos_client);
+        const data = await view(request, state.creditchain_client);
         if (data !== undefined) {
           const mappedData = data as [
             {

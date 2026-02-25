@@ -37,18 +37,18 @@ it("test getPublicFunctionLineNumber", () => {
 });
 
 const sourceCodeForTest = `module hippo_aggregator::aggregator {
-  use aptos_framework::coin;
-  use aptos_framework::account;
+  use creditchain_framework::coin;
+  use creditchain_framework::account;
   use std::signer;
   use std::option;
   use std::option::{Option, is_some, borrow};
   // use econia::market;
-  use aptos_std::event::EventHandle;
-  use aptos_framework::timestamp;
-  use aptos_std::event;
-  use aptos_std::type_info::{TypeInfo, type_of};
-  use aptos_framework::libra2_coin::Libra2Coin;
-  use aptos_framework::coin::Coin;
+  use creditchain_std::event::EventHandle;
+  use creditchain_framework::timestamp;
+  use creditchain_std::event;
+  use creditchain_std::type_info::{TypeInfo, type_of};
+  use creditchain_framework::creditchain_coin::CreditChainCoin;
+  use creditchain_framework::coin::Coin;
   use std::signer::address_of;
 
   const MAX_U64: u64 = 0xffffffffffffffff;
@@ -135,7 +135,7 @@ const sourceCodeForTest = `module hippo_aggregator::aggregator {
 
   #[cmd]
   public entry fun create_tortuga_signer(admin: &signer) {
-      use TortugaGovernance::staked_libra2_coin::StakedLibra2Coin;
+      use TortugaGovernance::staked_creditchain_coin::StakedCreditChainCoin;
       assert!(signer::address_of(admin) == @hippo_aggregator, E_NOT_ADMIN);
       let (tortuga_signer, signerCapability) = account::create_resource_account(admin,b"tortuga_signer");
       if (!exists<TortugaSigner>(@hippo_aggregator)){
@@ -143,11 +143,11 @@ const sourceCodeForTest = `module hippo_aggregator::aggregator {
               signerCapability
           });
       };
-      if (!coin::is_account_registered<Libra2Coin>(address_of(&tortuga_signer))){
-          coin::register<Libra2Coin>(&tortuga_signer);
+      if (!coin::is_account_registered<CreditChainCoin>(address_of(&tortuga_signer))){
+          coin::register<CreditChainCoin>(&tortuga_signer);
       };
-      if (!coin::is_account_registered<StakedLibra2Coin>(address_of(&tortuga_signer))){
-          coin::register<StakedLibra2Coin>(&tortuga_signer);
+      if (!coin::is_account_registered<StakedCreditChainCoin>(address_of(&tortuga_signer))){
+          coin::register<StakedCreditChainCoin>(&tortuga_signer);
       };
   }
 
@@ -166,10 +166,10 @@ const sourceCodeForTest = `module hippo_aggregator::aggregator {
   #[cmd]
   public entry fun init_coin_store_all(admin: &signer){
       use ditto::staked_coin;
-      use TortugaGovernance::staked_libra2_coin;
-      init_coin_store<Libra2Coin>(admin);
-      init_coin_store<staked_coin::StakedAptos>(admin);
-      init_coin_store<staked_libra2_coin::StakedLibra2Coin>(admin);
+      use TortugaGovernance::staked_creditchain_coin;
+      init_coin_store<CreditChainCoin>(admin);
+      init_coin_store<staked_coin::StakedCreditChain>(admin);
+      init_coin_store<staked_creditchain_coin::StakedCreditChainCoin>(admin);
   }
 
   #[test_only]
@@ -212,7 +212,7 @@ const sourceCodeForTest = `module hippo_aggregator::aggregator {
   #[test(admin = @hippo_aggregator)]
   fun test_change_coin_type(admin: &signer) acquires CoinStore {
       init_coin_store_all(admin);
-      let coin = change_coin_type<Libra2Coin, Libra2Coin>(coin::zero<Libra2Coin>());
+      let coin = change_coin_type<CreditChainCoin, CreditChainCoin>(coin::zero<CreditChainCoin>());
       coin::destroy_zero(coin)
   }
 
@@ -325,18 +325,18 @@ const sourceCodeForTest = `module hippo_aggregator::aggregator {
       else if (dex_type == DEX_DITTO) {
           use ditto::ditto_staking;
           use ditto::staked_coin;
-          if (type_of<X>() == type_of<Libra2Coin>() && type_of<Y>() == type_of<staked_coin::StakedAptos>()){
+          if (type_of<X>() == type_of<CreditChainCoin>() && type_of<Y>() == type_of<staked_coin::StakedCreditChain>()){
               (
                   option::none(),
-                  change_coin_type<staked_coin::StakedAptos, Y>(
-                      ditto_staking::exchange_aptos(
-                          change_coin_type<X, Libra2Coin>(x_in),
+                  change_coin_type<staked_coin::StakedCreditChain, Y>(
+                      ditto_staking::exchange_creditchain(
+                          change_coin_type<X, CreditChainCoin>(x_in),
                           @hippo_aggregator
                       )
                   )
               )
           }
-          else if (type_of<X>() == type_of<staked_coin::StakedAptos>() && type_of<Y>() == type_of<Libra2Coin>()){
+          else if (type_of<X>() == type_of<staked_coin::StakedCreditChain>() && type_of<Y>() == type_of<CreditChainCoin>()){
               abort E_UNSUPPORTED
           }
           else {
@@ -345,10 +345,10 @@ const sourceCodeForTest = `module hippo_aggregator::aggregator {
       }
       else if (dex_type == DEX_TORTUGA){
           use tortuga::stake_router;
-          use TortugaGovernance::staked_libra2_coin;
+          use TortugaGovernance::staked_creditchain_coin;
           if (
-              type_of<X>() == type_of<Libra2Coin>() &&
-                  type_of<Y>() == type_of<staked_libra2_coin::StakedLibra2Coin>()){
+              type_of<X>() == type_of<CreditChainCoin>() &&
+                  type_of<Y>() == type_of<staked_creditchain_coin::StakedCreditChainCoin>()){
 
               let tortuga_signer = account::create_signer_with_capability(
                   &borrow_global<TortugaSigner>(@hippo_aggregator).signerCapability

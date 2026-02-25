@@ -1,6 +1,6 @@
 import React from "react";
 import {Stack, Typography, useTheme, Box, Button} from "@mui/material";
-import {grey} from "../../themes/colors/libra2ColorPalette";
+import {grey} from "../../themes/colors/creditchainColorPalette";
 
 // return true if there is at least 1 card is not expanded
 function getNotAllExpanded(expandedList: boolean[]): boolean {

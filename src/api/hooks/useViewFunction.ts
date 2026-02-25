@@ -23,7 +23,7 @@ export function useViewFunction(
       {functionName, typeArgs, args},
       state.network_value,
     ],
-    queryFn: () => view(request, state.aptos_client),
+    queryFn: () => view(request, state.creditchain_client),
     refetchOnWindowFocus: false,
   });
 }

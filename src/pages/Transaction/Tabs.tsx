@@ -185,7 +185,7 @@ export default function TransactionTabs({
           value={
             <Link
               color="inherit"
-              to={`https://fullnode.${globalState.network_name.toLowerCase()}.libra2.org/v1/transactions/by_hash/${transaction.hash}`}
+              to={`https://fullnode.${globalState.network_name.toLowerCase()}.creditchain.org/v1/transactions/by_hash/${transaction.hash}`}
             >
               Transaction ${transaction.hash}
             </Link>

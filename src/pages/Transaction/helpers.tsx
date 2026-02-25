@@ -19,7 +19,7 @@ export function getLearnMoreTooltip(
       return (
         <LearnMoreTooltip
           text="An accumulator root hash is the root hash of a Merkle accumulator."
-          link="https://docs.libra2.org/en/network/glossary#merkle-accumulator"
+          link="https://docs.creditchain.org/en/network/glossary#merkle-accumulator"
         />
       );
     case "amount":
@@ -32,21 +32,21 @@ export function getLearnMoreTooltip(
       return (
         <LearnMoreTooltip
           text="The block height is the number block in the blockchain."
-          link="https://docs.libra2.org/en/network/glossary#blocks"
+          link="https://docs.creditchain.org/en/network/glossary#blocks"
         />
       );
     case "epoch":
       return (
         <LearnMoreTooltip
           text="The period of time between validator set changes and other administrative actions."
-          link="https://docs.libra2.org/en/network/glossary#epoch"
+          link="https://docs.creditchain.org/en/network/glossary#epoch"
         />
       );
     case "event_root_hash":
       return (
         <LearnMoreTooltip
           text="Hash of the merkle tree root of the events emitted in the block."
-          link="https://docs.libra2.org/en/network/glossary#event"
+          link="https://docs.creditchain.org/en/network/glossary#event"
           linkToText
         />
       );
@@ -54,7 +54,7 @@ export function getLearnMoreTooltip(
       return (
         <LearnMoreTooltip
           text="A transaction ceases to be valid after its expiration time."
-          link="https://docs.libra2.org/en/network/glossary#expiration-time"
+          link="https://docs.creditchain.org/en/network/glossary#expiration-time"
         />
       );
     case "fee_payer":
@@ -69,7 +69,7 @@ export function getLearnMoreTooltip(
       return (
         <LearnMoreTooltip
           text="The gas fee is the network's cost to run the transaction."
-          link="https://docs.libra2.org/en/network/glossary#gas"
+          link="https://docs.creditchain.org/en/network/glossary#gas"
           linkToText
         />
       );
@@ -77,7 +77,7 @@ export function getLearnMoreTooltip(
       return (
         <LearnMoreTooltip
           text="Gas unit price is the amount the user is willing to pay for the transaction per gas unit."
-          link="https://docs.libra2.org/en/network/glossary#gas-unit-price"
+          link="https://docs.creditchain.org/en/network/glossary#gas-unit-price"
           linkToText
         />
       );
@@ -85,7 +85,7 @@ export function getLearnMoreTooltip(
       return (
         <LearnMoreTooltip
           text="The total number of gas units used in the transaction."
-          link="https://docs.libra2.org/en/network/glossary#gas"
+          link="https://docs.creditchain.org/en/network/glossary#gas"
         />
       );
     case "id":
@@ -94,7 +94,7 @@ export function getLearnMoreTooltip(
       return (
         <LearnMoreTooltip
           text="The Maximum Gas Amount of a transaction is the maximum amount of gas units the sender is willing to pay for the transaction."
-          link="https://docs.libra2.org/en/network/glossary#maximum-gas-amount"
+          link="https://docs.creditchain.org/en/network/glossary#maximum-gas-amount"
         />
       );
     case "proposer":
@@ -105,28 +105,28 @@ export function getLearnMoreTooltip(
       return (
         <LearnMoreTooltip
           text="A round consists of achieving consensus on a block of transactions and their execution results."
-          link="https://docs.libra2.org/en/network/glossary#round"
+          link="https://docs.creditchain.org/en/network/glossary#round"
         />
       );
     case "sender":
       return (
         <LearnMoreTooltip
           text="Sender is the address of the originator account for a transaction."
-          link="https://docs.libra2.org/en/network/glossary#sender"
+          link="https://docs.creditchain.org/en/network/glossary#sender"
         />
       );
     case "sequence_number":
       return (
         <LearnMoreTooltip
           text="The sequence number for an account indicates the number of transactions that have been submitted and committed on chain from that account."
-          link="https://docs.libra2.org/en/network/glossary#sequence-number"
+          link="https://docs.creditchain.org/en/network/glossary#sequence-number"
         />
       );
     case "replay_protection_nonce":
       return (
         <LearnMoreTooltip
           text="The replay protection nonce is a number that prevents replay attacks by ensuring that a transaction can only be executed once in a 60 second period."
-          link="https://docs.libra2.org/en/network/glossary#replay-protection-nonce"
+          link="https://docs.creditchain.org/en/network/glossary#replay-protection-nonce"
         />
       );
     case "signature":
@@ -143,14 +143,14 @@ export function getLearnMoreTooltip(
       return (
         <LearnMoreTooltip
           text="A version is also called “height” in blockchain literature."
-          link="https://docs.libra2.org/en/network/glossary/#version"
+          link="https://docs.creditchain.org/en/network/glossary/#version"
         />
       );
     case "vm_status":
       return (
         <LearnMoreTooltip
           text="Learn more about VM"
-          link="https://docs.libra2.org/en/network/glossary#move-virtual-machine-mvm"
+          link="https://docs.creditchain.org/en/network/glossary#move-virtual-machine-mvm"
           linkToText
         />
       );

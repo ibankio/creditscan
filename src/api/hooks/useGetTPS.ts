@@ -12,7 +12,7 @@ export function useGetTPS() {
 
   const {data: ledgerData} = useQuery({
     queryKey: ["ledgerInfo", state.network_value],
-    queryFn: () => getLedgerInfo(state.aptos_client),
+    queryFn: () => getLedgerInfo(state.creditchain_client),
     refetchInterval: 10000,
   });
   const currentBlockHeight = ledgerData?.block_height;

@@ -6,7 +6,7 @@ import {
   City,
   ValidatorGeoGroup,
 } from "../../../api/hooks/useGetValidatorsGeoData";
-import {grey} from "../../../themes/colors/libra2ColorPalette";
+import {grey} from "../../../themes/colors/creditchainColorPalette";
 
 const MARKER_COLOR = "#22D3EE";
 const MIN_NODE_COUNT_SHOWN_IN_MARKER = 5;

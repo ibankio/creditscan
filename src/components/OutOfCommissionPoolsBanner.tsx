@@ -23,7 +23,7 @@ export function OutOfCommissionPoolsBanner() {
   );
 
   useEffect(() => {
-    if (!connected || loading || !delegatorPools || !state.aptos_client) {
+    if (!connected || loading || !delegatorPools || !state.creditchain_client) {
       setHasZeroCommission(false);
       setZeroCommissionPoolAddresses([]);
       return;
@@ -38,7 +38,7 @@ export function OutOfCommissionPoolsBanner() {
         const poolChecks = delegatorPools.map(async (pool) => {
           try {
             const commissionResult = await getValidatorCommission(
-              state.aptos_client,
+              state.creditchain_client,
               pool.pool_address,
             );
 
@@ -80,7 +80,13 @@ export function OutOfCommissionPoolsBanner() {
     };
 
     checkPools();
-  }, [connected, loading, delegatorPools, state.aptos_client, isChecking]);
+  }, [
+    connected,
+    loading,
+    delegatorPools,
+    state.creditchain_client,
+    isChecking,
+  ]);
 
   if (!connected || !hasZeroCommission) {
     return null;

@@ -27,7 +27,7 @@ export function CoinToFAMigrationBanner() {
       wallet_address: addressFromWallet(account?.address),
       wallet_name: wallet?.name ?? "",
     });
-    window.location.href = `https://explorer.libra2.org/account/${addressFromWallet(account?.address)}/coins`;
+    window.location.href = `https://explorer.creditchain.org/account/${addressFromWallet(account?.address)}/coins`;
   };
 
   const learnMoreButton = (

@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import {useContext, useEffect, useState} from "react";
 import TimestampValue from "../../components/IndividualPageContent/ContentValue/TimestampValue";
-import {grey, negativeColor} from "../../themes/colors/libra2ColorPalette";
+import {grey, negativeColor} from "../../themes/colors/creditchainColorPalette";
 import {getStakeOperationAPTRequirement} from "./utils";
 import StyledDialog from "../../components/StyledDialog";
 import StyledTooltip, {
@@ -134,7 +134,7 @@ function StakeOperationDialogContent({
     async function fetchData() {
       if (stakeOperation === StakeOperation.STAKE) {
         const fee = await getAddStakeFee(
-          state.aptos_client,
+          state.creditchain_client,
           validator!.owner_address,
           Number(amount).toFixed(8),
         );
@@ -144,7 +144,7 @@ function StakeOperationDialogContent({
     fetchData();
   }, [
     state.network_value,
-    state.aptos_client,
+    state.creditchain_client,
     amount,
     stakeOperation,
     validator,
@@ -363,8 +363,8 @@ function StakeOperationDialogContent({
       <DialogContent sx={{textAlign: "center"}}>
         <Typography variant="caption" color={grey[450]}>
           <div>
-            Please do your own research. Libra2 Research is not responsible for
-            the performance of the validator nodes displayed here, or the
+            Please do your own research. CreditChain Research is not responsible
+            for the performance of the validator nodes displayed here, or the
             security of your funds
           </div>
         </Typography>
@@ -424,8 +424,8 @@ function StakeOperationDialogContent({
       <DialogContent sx={{textAlign: "center"}}>
         <Typography variant="caption" color={grey[450]}>
           <div>
-            Please do your own research. Libra2 Research is not responsible for
-            the security of your funds
+            Please do your own research. CreditChain Research is not responsible
+            for the security of your funds
           </div>
         </Typography>
       </DialogContent>
@@ -476,8 +476,8 @@ function StakeOperationDialogContent({
       <DialogContent sx={{textAlign: "center"}}>
         <Typography variant="caption" color={grey[450]}>
           <div>
-            Please do your own research. Libra2 Research is not responsible for
-            the security of your funds
+            Please do your own research. CreditChain Research is not responsible
+            for the security of your funds
           </div>
         </Typography>
       </DialogContent>

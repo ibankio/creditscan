@@ -1,7 +1,7 @@
 import {Box, useTheme} from "@mui/material";
 import React from "react";
 import ReactJson from "react-json-view";
-import {codeBlockColor} from "../../themes/colors/libra2ColorPalette";
+import {codeBlockColor} from "../../themes/colors/creditchainColorPalette";
 import EmptyValue from "./ContentValue/EmptyValue";
 
 const TEXT_COLOR_LIGHT = "#0EA5E9";
@@ -19,8 +19,8 @@ function useJsonViewCardTheme() {
     theme.palette.mode === "dark" ? TEXT_COLOR_DARK : TEXT_COLOR_LIGHT;
 
   return {
-    scheme: "libra2_explorer",
-    author: "libra2",
+    scheme: "creditchain_explorer",
+    author: "creditchain",
     base00: TRANSPARENT,
     base01: textColor,
     base02: SECONDARY_TEXT_COLOR, // line color

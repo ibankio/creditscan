@@ -21,7 +21,7 @@ import {
 } from "@aptos-labs/ts-sdk";
 
 const HEADERS = {
-  "x-indexer-client": "libra2xp",
+  "x-indexer-client": "creditscan",
 };
 
 export type GlobalState = {
@@ -32,7 +32,7 @@ export type GlobalState = {
   /** derived from network_name - url to connect to network */
   readonly network_value: string;
   /** derived from network_value */
-  readonly aptos_client: AptosClient;
+  readonly creditchain_client: AptosClient;
   /** derived from network_value */
   readonly indexer_client?: IndexerClient;
   /** derived from network_value */
@@ -61,7 +61,7 @@ function deriveGlobalState({
     feature_name,
     network_name,
     network_value: networks[network_name],
-    aptos_client: new AptosClient(networks[network_name], {
+    creditchain_client: new AptosClient(networks[network_name], {
       HEADERS,
       TOKEN: apiKey,
     }),

@@ -6,7 +6,7 @@ import {
   negativeColor,
   primary,
   warningColor,
-} from "./colors/libra2ColorPalette";
+} from "./colors/creditchainColorPalette";
 import React from "react";
 
 // Button variants

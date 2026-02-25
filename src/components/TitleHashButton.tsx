@@ -12,7 +12,7 @@ import {
   codeBlockColor,
   codeBlockColorClickableOnHover,
   grey,
-} from "../themes/colors/libra2ColorPalette";
+} from "../themes/colors/creditchainColorPalette";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import {truncateAddress, truncateAddressMiddle} from "../pages/utils";
@@ -177,7 +177,7 @@ function Name({
   if (isAns) {
     content = (
       <Link
-        href={`https://www.aptosnames.com/name/${name}`}
+        href={`https://names.creditchain.org/name/${name}`}
         target="_blank"
         underline="none"
       >

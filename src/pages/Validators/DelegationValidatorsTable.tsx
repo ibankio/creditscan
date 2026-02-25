@@ -21,10 +21,10 @@ import CurrencyValue, {
   APTCurrencyValue,
 } from "../../components/IndividualPageContent/ContentValue/CurrencyValue";
 import {
-  libra2Color,
+  creditchainColor,
   grey,
   primary,
-} from "../../themes/colors/libra2ColorPalette";
+} from "../../themes/colors/creditchainColorPalette";
 import {useGlobalState} from "../../global-config/GlobalConfig";
 import {StyledLearnMoreTooltip} from "../../components/StyledTooltip";
 import {OperatorAddrCell, ValidatorAddrCell} from "./ValidatorsTable";
@@ -320,7 +320,7 @@ function ViewCell() {
         fontSize="small"
         sx={{
           color: "black",
-          backgroundColor: libra2Color,
+          backgroundColor: creditchainColor,
           "&:hover": {
             backgroundColor: alpha(primary["500"], 1),
           },
@@ -361,7 +361,7 @@ function MyDepositCell({validator}: ValidatorCellProps) {
     <GeneralTableCell sx={{paddingRight: 5, textAlign: "right"}}>
       {Number(totalDeposit) !== 0 ? (
         <Stack direction="row" spacing={1.5}>
-          <CheckCircleIcon sx={{color: libra2Color}} fontSize="small" />
+          <CheckCircleIcon sx={{color: creditchainColor}} fontSize="small" />
           <CurrencyValue
             amount={Number(totalDeposit).toString()}
             currencyCode="LBT"
@@ -458,11 +458,14 @@ export function DelegationValidatorsTable() {
   >({
     queryKey: [
       "validatorCommisionAndState",
-      state.aptos_client,
+      state.creditchain_client,
       ...sortedValidatorAddrs,
     ],
     queryFn: () =>
-      getValidatorCommissionAndState(state.aptos_client, sortedValidatorAddrs),
+      getValidatorCommissionAndState(
+        state.creditchain_client,
+        sortedValidatorAddrs,
+      ),
     select: (res: MoveValue[]) => {
       /// First arg is always the return value
       const ret = res[0] as [MoveValue, MoveValue][];

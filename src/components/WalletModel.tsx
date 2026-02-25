@@ -20,7 +20,7 @@ import {
   Typography,
   useTheme,
 } from "@mui/material";
-import {grey} from "./libra2ColorPalette";
+import {grey} from "../themes/colors/creditchainColorPalette";
 // reported bug with loading mui icons with esm, therefore need to import like this https://github.com/mui/material-ui/issues/35233
 import {
   ArrowBack,
@@ -117,7 +117,7 @@ export default function WalletsModal({
             {hasAptosConnectWallets ? (
               <>
                 <span>Log in or sign up</span>
-                <span>with Social + Libra2 Connect</span>
+                <span>with Social + CreditChain Connect</span>
               </>
             ) : (
               "Connect Wallet"
@@ -188,7 +188,8 @@ export default function WalletsModal({
                     appearance: "none",
                   }}
                 >
-                  Libra2 Connect <ArrowForward sx={{height: 16, width: 16}} />
+                  CreditChain Connect{" "}
+                  <ArrowForward sx={{height: 16, width: 16}} />
                 </Box>
               </Typography>
 
@@ -340,7 +341,7 @@ function renderEducationScreen(screen: AboutAptosConnectEducationScreen) {
           <ArrowBack />
         </IconButton>
         <Typography variant="body1" component="h2" width="100%" align="center">
-          About Libra2 Connect
+          About CreditChain Connect
         </Typography>
       </Box>
 

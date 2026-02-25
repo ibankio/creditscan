@@ -1,7 +1,7 @@
 import {Dialog, DialogProps, IconButton, Stack} from "@mui/material";
 import React from "react";
 import CloseIcon from "@mui/icons-material/Close";
-import {grey} from "../themes/colors/libra2ColorPalette";
+import {grey} from "../themes/colors/creditchainColorPalette";
 
 interface StyledDialogProps extends DialogProps {
   handleDialogClose: () => void;

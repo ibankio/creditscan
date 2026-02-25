@@ -18,7 +18,7 @@ type DelegationNodeInfoResponse = {
 export function useGetDelegationNodeCommissionChange({
   validatorAddress,
 }: DelegationNodeCommissionChangeProps): DelegationNodeInfoResponse {
-  const [{aptos_client: client}] = useGlobalState();
+  const [{creditchain_client: client}] = useGlobalState();
 
   const {
     data: nextCommission,

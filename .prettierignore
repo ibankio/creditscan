@@ -23,3 +23,8 @@ src/assets/svg/aptos_explorer_svg.zip
 .gitignore
 .env.local
 .env.example
+
+# Ignore SVG assets (logos, icons, etc.)
+src/assets/svg/*.svg
+# or more broadly:
+**/*.svg

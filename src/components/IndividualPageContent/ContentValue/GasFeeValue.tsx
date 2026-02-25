@@ -1,9 +1,9 @@
 import React from "react";
 import {
-  libra2Color,
+  creditchainColor,
   grey,
   negativeColor,
-} from "../../../themes/colors/libra2ColorPalette";
+} from "../../../themes/colors/creditchainColorPalette";
 import {APTCurrencyValue} from "./CurrencyValue";
 import GasValue from "./GasValue";
 import {Types} from "aptos";
@@ -64,7 +64,7 @@ export default function GasFeeValue({
     let amountAbs = netGasWithRefund;
     let color = undefined;
     if (netGasWithRefund < 0) {
-      color = libra2Color;
+      color = creditchainColor;
     } else if (netGasWithRefund > 0) {
       color = negativeColor;
       amountAbs = -netGasWithRefund;

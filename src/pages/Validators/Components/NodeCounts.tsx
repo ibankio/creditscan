@@ -2,7 +2,7 @@ import {Skeleton, Typography} from "@mui/material";
 import React from "react";
 import {useGetValidatorSet} from "../../../api/hooks/useGetValidatorSet";
 import {ValidatorGeoMetric} from "../../../api/hooks/useGetValidatorsGeoData";
-import {grey} from "../../../themes/colors/libra2ColorPalette";
+import {grey} from "../../../themes/colors/creditchainColorPalette";
 import {
   fontSizeBodySmall,
   fontSizeSubtitle,

@@ -24,7 +24,7 @@ type DelegationNodeInfoResponse = {
 export function useGetDelegationNodeInfo({
   validatorAddress,
 }: DelegationNodeInfoProps): DelegationNodeInfoResponse {
-  const [{aptos_client: client}] = useGlobalState();
+  const [{creditchain_client: client}] = useGlobalState();
 
   // Validate validatorAddress
   const isValidAddress = !!validatorAddress && validatorAddress.length > 0;

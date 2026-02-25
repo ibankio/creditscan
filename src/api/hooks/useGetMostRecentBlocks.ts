@@ -13,7 +13,7 @@ export function useGetMostRecentBlocks(
 
   const {isLoading: isLoadingLedgerData, data: ledgerData} = useQuery({
     queryKey: ["ledgerInfo", state.network_value],
-    queryFn: () => getLedgerInfo(state.aptos_client),
+    queryFn: () => getLedgerInfo(state.creditchain_client),
   });
   const currentBlockHeight = parseInt(start ?? ledgerData?.block_height ?? "");
 
@@ -21,7 +21,11 @@ export function useGetMostRecentBlocks(
     queryKey: ["block", currentBlockHeight, state.network_value],
     queryFn: async () => {
       if (currentBlockHeight !== undefined) {
-        return getRecentBlocks(currentBlockHeight, count, state.aptos_client);
+        return getRecentBlocks(
+          currentBlockHeight,
+          count,
+          state.creditchain_client,
+        );
       }
     },
   });

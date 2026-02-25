@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 import * as React from "react";
 import SideDrawer from "../../components/SideDrawer";
-import {grey} from "../../themes/colors/libra2ColorPalette";
+import {grey} from "../../themes/colors/creditchainColorPalette";
 import {REWARDS_LEARN_MORE_LINK} from "./Components/Staking";
 import {Link} from "../../routing";
 
@@ -21,9 +21,9 @@ const faqStakingData = [
     question: "What is delegated staking?",
     answer: (
       <React.Fragment>
-        As a Libra2 (LBT) holder, you can delegate your LBT to a delegation
+        As a CreditChain (LBT) holder, you can delegate your LBT to a delegation
         pool. The total delegation pool is an aggregation of staked LBT from
-        various token owners, and collectively staked. Libra2 is a
+        various token owners, and collectively staked. CreditChain is a
         proof-of-stake network, which means that tokens are staked to{" "}
         <Link to={"#validators-section"}>validators</Link> in order to keep the
         network healthy.
@@ -76,7 +76,7 @@ const faqStakingData = [
         Congratulations! You have successfully staked LBT on Explorer! You can
         also stake LBT directly to a validator node through the{" "}
         <Link
-          to="https://libra2.org/docs/validators/delegation#perform-delegation-pool-operations"
+          to="https://creditchain.org/docs/validators/delegation#perform-delegation-pool-operations"
           target="_blank"
         >
           CLI
@@ -171,10 +171,10 @@ const faqValidatorData = [
       <React.Fragment>
         Validator nodes confirm transactions by proposing and executing blocks
         on the network. The stake that they hold helps to prove that they are
-        trusted to vote on transactions. You can read more about how the Libra2
-        blockchain works{" "}
+        trusted to vote on transactions. You can read more about how the
+        CreditChain blockchain works{" "}
         <Link
-          to={"https://libra2.org/docs/network/blockchain#consensus"}
+          to={"https://creditchain.org/docs/network/blockchain#consensus"}
           target="_blank"
         >
           here
@@ -195,10 +195,10 @@ const faqValidatorData = [
         1M LBT. Only active validators will earn rewards.
         <br />
         <br />
-        However, please do your own research, Libra2 Research is not responsible
-        for the veracity of the information displayed, nor responsible for the
-        security of your funds, past or future performance of the validator
-        node.
+        However, please do your own research, CreditChain Research is not
+        responsible for the veracity of the information displayed, nor
+        responsible for the security of your funds, past or future performance
+        of the validator node.
       </React.Fragment>
     ),
   },

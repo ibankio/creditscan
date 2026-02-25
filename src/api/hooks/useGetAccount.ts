@@ -12,7 +12,7 @@ export function useGetAccount(
 
   return useQuery<Types.AccountData, ResponseError>({
     queryKey: ["account", {address}, state.network_value],
-    queryFn: () => getAccount({address}, state.aptos_client),
+    queryFn: () => getAccount({address}, state.creditchain_client),
     retry: options?.retry ?? false,
   });
 }

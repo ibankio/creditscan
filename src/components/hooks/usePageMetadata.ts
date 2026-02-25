@@ -6,6 +6,6 @@ interface PageMetadataArgs {
 
 export function usePageMetadata(args: PageMetadataArgs = {}): void {
   useEffect(() => {
-    document.title = args.title ? `${args.title} | Libra2XP` : "Libra2XP";
+    document.title = args.title ? `${args.title} | CreditScan` : "CreditScan";
   }, [args]);
 }

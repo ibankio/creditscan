@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import {Link, Stack, Typography} from "@mui/material";
 import {getFormattedBalanceStr} from "../../components/IndividualPageContent/ContentValue/CurrencyValue";
 import {Card} from "../../components/Card";
-import {grey} from "../../themes/colors/libra2ColorPalette";
+import {grey} from "../../themes/colors/creditchainColorPalette";
 import StyledTooltip from "../../components/StyledTooltip";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import {useGetAccountLBTBalance} from "../../api/hooks/useGetAccountAPTBalance";
@@ -23,7 +23,7 @@ export default function BalanceCard({
   symbol,
   decimals = 8,
 }: BalanceCardProps) {
-  const APT = "0x1::libra2_coin::Libra2Coin" as const;
+  const APT = "0x1::creditchain_coin::CreditChainCoin" as const;
   const theType = coinType ?? APT;
   const isAPT = theType === APT;
 

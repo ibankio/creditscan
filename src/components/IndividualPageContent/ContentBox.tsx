@@ -1,6 +1,6 @@
 import * as React from "react";
 import {Box, BoxProps, Stack, useTheme} from "@mui/material";
-import {grey} from "../../themes/colors/libra2ColorPalette";
+import {grey} from "../../themes/colors/creditchainColorPalette";
 
 interface ContentBoxProps extends BoxProps {
   children: React.ReactNode;

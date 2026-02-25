@@ -85,7 +85,7 @@ function TransactionsPageInner({data}: UseQueryResult<Types.IndexResponse>) {
 
   const result = useQuery({
     queryKey: ["transactions", {start, limit}, state.network_value],
-    queryFn: () => getTransactions({start, limit}, state.aptos_client),
+    queryFn: () => getTransactions({start, limit}, state.creditchain_client),
     placeholderData: keepPreviousData,
   });
 
@@ -115,7 +115,7 @@ export default function AllTransactions() {
 
   const result = useQuery({
     queryKey: ["ledgerInfo", state.network_value],
-    queryFn: () => getLedgerInfo(state.aptos_client),
+    queryFn: () => getLedgerInfo(state.creditchain_client),
     refetchInterval: 10000,
   });
 

@@ -14,7 +14,7 @@ export default function LandingPage() {
       <CoinToFAMigrationBanner />
       <WalletDeprecationBanner />
       <Typography variant="h3" component="h3" marginBottom={4}>
-        Libra2XP (Libra2 Explorer)
+        CreditScan (CreditScan)
       </Typography>
       <NetworkInfo isOnHomePage />
       <HeaderSearch />

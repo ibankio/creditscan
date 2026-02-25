@@ -1,6 +1,6 @@
 # Analytics
 
-The [analytics](https://explorer.libra2.org/analytics?network=mainnet) and [validators](https://explorer.libra2.org/validators?network=mainnet) tab on explorer uses some external datasets stored as JSON.
+The [analytics](https://explorer.creditchain.org/analytics?network=mainnet) and [validators](https://explorer.creditchain.org/validators?network=mainnet) tab on explorer uses some external datasets stored as JSON.
 
 This folder will hold the logic for generating these JSON from [google public dataset](https://console.cloud.google.com/marketplace/product/bigquery-public-data/crypto-aptos-mainnet-us)
 

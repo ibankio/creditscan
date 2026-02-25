@@ -1,6 +1,6 @@
 import React from "react";
 import {Box, useTheme} from "@mui/material";
-import {grey} from "../../../themes/colors/libra2ColorPalette";
+import {grey} from "../../../themes/colors/creditchainColorPalette";
 import {Link} from "../../../routing";
 import {useLogEventWithBasic} from "../hooks/useLogEventWithBasic";
 

@@ -1,9 +1,9 @@
 import {CoinDescription} from "./api/hooks/useGetCoinList";
 
 const DEFAULT_NETWORK_URLS = {
-  mainnet: "https://rpc.libra2.org/v1",
-  testnet: "https://testnet.libra2.org/v1",
-  devnet: "https://devnet.libra2.org/v1",
+  mainnet: "https://rpc.creditchain.org/v1",
+  testnet: "https://testnet.creditchain.org/v1",
+  devnet: "https://devnet.creditchain.org/v1",
   local: "http://127.0.0.1:8080/v1",
   localnet: "http://127.0.0.1:8080/v1",
 };
@@ -18,32 +18,32 @@ function normalizeUrl(url?: string, fallback?: string) {
  */
 export const networks: Record<string, string> = {
   mainnet: normalizeUrl(
-    import.meta.env.LIBRA2_MAINNET_URL ??
-      import.meta.env.LIBRA2_NODE_REST_URL ??
-      import.meta.env.LIBRA2_NODE_URL ??
+    import.meta.env.CREDITCHAIN_MAINNET_URL ??
+      import.meta.env.CREDITCHAIN_NODE_REST_URL ??
+      import.meta.env.CREDITCHAIN_NODE_URL ??
       import.meta.env.VITE_NODE_REST_URL ??
       import.meta.env.NODE_REST_URL ??
-      import.meta.env.VITE_LIBRA2_NODE_URL ??
+      import.meta.env.VITE_CREDITCHAIN_NODE_URL ??
       DEFAULT_NETWORK_URLS.mainnet,
     DEFAULT_NETWORK_URLS.mainnet,
   ),
   testnet: normalizeUrl(
-    import.meta.env.LIBRA2_TESTNET_URL ?? DEFAULT_NETWORK_URLS.testnet,
+    import.meta.env.CREDITCHAIN_TESTNET_URL ?? DEFAULT_NETWORK_URLS.testnet,
     DEFAULT_NETWORK_URLS.testnet,
   ),
   devnet: normalizeUrl(
-    import.meta.env.LIBRA2_DEVNET_URL ?? DEFAULT_NETWORK_URLS.devnet,
+    import.meta.env.CREDITCHAIN_DEVNET_URL ?? DEFAULT_NETWORK_URLS.devnet,
     DEFAULT_NETWORK_URLS.devnet,
   ),
   local: normalizeUrl(
-    import.meta.env.LIBRA2_LOCAL_URL ??
-      import.meta.env.LIBRA2_LOCALNET_URL ??
+    import.meta.env.CREDITCHAIN_LOCAL_URL ??
+      import.meta.env.CREDITCHAIN_LOCALNET_URL ??
       DEFAULT_NETWORK_URLS.local,
     DEFAULT_NETWORK_URLS.local,
   ),
   localnet: normalizeUrl(
-    import.meta.env.LIBRA2_LOCALNET_URL ??
-      import.meta.env.LIBRA2_LOCAL_URL ??
+    import.meta.env.CREDITCHAIN_LOCALNET_URL ??
+      import.meta.env.CREDITCHAIN_LOCAL_URL ??
       DEFAULT_NETWORK_URLS.localnet,
     DEFAULT_NETWORK_URLS.localnet,
   ),
@@ -59,8 +59,8 @@ type ApiKeys = {
 
 /**
  * Public Client IDs (API keys) from API Gateway. For mainnet, these come from the prod
- * API Gateway (developers.libra2.org), for testnet and devnet these come from the
- * staging API Gateway (staging.developers.libra2.org).
+ * API Gateway (developers.creditchain.org), for testnet and devnet these come from the
+ * staging API Gateway (staging.developers.creditchain.org).
  *
  * These keys are all generated using the petra@aptoslabs.com account. Learn more:
  * https://www.notion.so/aptoslabs/API-Gateway-FAQ-for-product-owners-183b29ba6bed41f8922e6049d9d36486
@@ -161,7 +161,7 @@ export const knownAddresses: Record<string, string> = {
   "0x0000000000000000000000000000000000000000000000000000000000000004":
     "Digital Assets (0x4)",
   "0x000000000000000000000000000000000000000000000000000000000000000A":
-    "Libra2 Coin Fungible Asset",
+    "CreditChain Coin Fungible Asset",
   "0xdcc43c54a666493b6cbfc1ecc81af0bc24e9b75c5ab3a7065c1fc9632ee8bd82":
     "GovScan Voting",
   // Aptos labs
@@ -472,11 +472,11 @@ export const scamAddresses: Record<string, string> = {
 // This provides a way to hardcode coins that are not in the token list, but still
 // have functionality used elsewhere
 export const HardCodedCoins: Record<string, CoinDescription> = {
-  "0x1::libra2_coin::Libra2Coin": {
+  "0x1::creditchain_coin::CreditChainCoin": {
     chainId: 1,
-    tokenAddress: "0x1::libra2_coin::Libra2Coin",
+    tokenAddress: "0x1::creditchain_coin::CreditChainCoin",
     faAddress: "0xa",
-    name: "Libra2 Coin",
+    name: "CreditChain Coin",
     symbol: "LBT",
     decimals: 8,
     panoraSymbol: "LBT",
@@ -916,14 +916,14 @@ export const supplyLimitOverrides: Record<string, bigint> = {
   "0x967adbf2e05fe665ab86a3bf2c4acfa39fbf62097963474ef70a0786dae8cfa2::NRUH::NRUH":
     1000000000000000n, // Caps burned at creation
   "0x4fbed3f8a3fd8a11081c8b6392152a8b0cb14d70d0414586f0c9b858fcd2d6a7::UPTOS::UPTOS":
-    8888888888800000000n, // Caps burned at https://explorer.libra2.org/txn/0x4594e752ad872dd4d6fcdcdfe5a226de3556864dfa825bf77d90df810f25257e?network=mainnet no mints since
+    8888888888800000000n, // Caps burned at https://explorer.creditchain.org/txn/0x4594e752ad872dd4d6fcdcdfe5a226de3556864dfa825bf77d90df810f25257e?network=mainnet no mints since
 };
 
 export const EMOJICOIN_REGISTRY_ADDRESS =
   "0x4b947ed016c64bde81972d69ea7d356de670d57fd2608b129f4d94ac0d0ee61";
 
 export const nativeTokens: Record<string, string> = {
-  "0x1::libra2_coin::Libra2Coin": "LBT",
+  "0x1::creditchain_coin::CreditChainCoin": "LBT",
   "0x000000000000000000000000000000000000000000000000000000000000000a": "LBT",
   "0x000000000000000000000000000000000000000000000000000000000000000A": "LBT",
   "0xa": "LBT",
@@ -965,7 +965,7 @@ export const labsBannedTokens: Record<string, string> = {
     MARKED_AS_SCAM,
   "0xf658475dc67a4d48295dbcea6de1dc3c9af64c1c80d4161284df369be941dafb::moon_coin::MoonCoin":
     MARKED_AS_SCAM,
-  "0x48327a479bf5c5d2e36d5e9846362cff2d99e0e27ff92859fc247893fded3fbd::LIBRA2::LIBRA2":
+  "0x48327a479bf5c5d2e36d5e9846362cff2d99e0e27ff92859fc247893fded3fbd::CREDITCHAIN::CREDITCHAIN":
     MARKED_AS_SCAM,
   "0xbc106d0fef7e5ce159423a1a9312e011bca7fb57f961146a2f88003a779b25c2::QUEST::QUEST":
     MARKED_AS_SCAM,

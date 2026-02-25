@@ -1,6 +1,6 @@
 import {PropsWithChildren} from "react";
 import {SxProps, TableRow, useTheme} from "@mui/material";
-import {grey} from "../../themes/colors/libra2ColorPalette";
+import {grey} from "../../themes/colors/creditchainColorPalette";
 import {Link} from "../../routing";
 
 export default function GeneralTableRow({

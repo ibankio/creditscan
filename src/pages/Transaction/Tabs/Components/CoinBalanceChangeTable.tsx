@@ -11,7 +11,7 @@ import CurrencyValue, {
 import {
   negativeColor,
   primary,
-} from "../../../../themes/colors/libra2ColorPalette";
+} from "../../../../themes/colors/creditchainColorPalette";
 import {Types} from "aptos";
 import GeneralTableBody from "../../../../components/Table/GeneralTableBody";
 import GeneralTableCell from "../../../../components/Table/GeneralTableCell";

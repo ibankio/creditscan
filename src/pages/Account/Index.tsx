@@ -193,7 +193,7 @@ export default function AccountPage({
       <Grid size={{xs: 12, md: 4, lg: 3}} marginTop={{md: 0, xs: 2}}>
         <BalanceCard
           address={address}
-          coinType={"0x1::libra2_coin::Libra2Coin"} // 你的 LBT 类型
+          coinType={"0x1::creditchain_coin::CreditChainCoin"} // 你的 LBT 类型
           symbol="LBT"
           decimals={8}
         />

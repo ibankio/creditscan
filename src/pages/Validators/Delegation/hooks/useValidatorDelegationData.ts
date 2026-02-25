@@ -89,16 +89,16 @@ export function useValidatorDelegationData() {
   } = useQuery<Types.MoveValue[], ResponseError>({
     queryKey: [
       "validatorCommisionAndState",
-      state.aptos_client,
+      state.creditchain_client,
       ...validatorAddresses,
     ],
     queryFn: () => {
       return getValidatorCommissionAndState(
-        state.aptos_client,
+        state.creditchain_client,
         validatorAddresses,
       );
     },
-    enabled: validatorAddresses.length > 0 && !!state.aptos_client,
+    enabled: validatorAddresses.length > 0 && !!state.creditchain_client,
     select: (res: MoveValue[]) => {
       // First arg is always the return value
       const ret = res[0] as [MoveValue, MoveValue][];
@@ -124,13 +124,13 @@ export function useValidatorDelegationData() {
     queryFn: () => {
       return getBatchDelegatorCounts(
         validatorAddresses,
-        state.aptos_client,
+        state.creditchain_client,
         state.network_name,
       );
     },
     enabled:
       validatorAddresses.length > 0 &&
-      !!state.aptos_client &&
+      !!state.creditchain_client &&
       !!state.network_name,
   });
 
@@ -149,14 +149,14 @@ export function useValidatorDelegationData() {
       return getBatchUserStakes(
         accountAddress,
         validatorAddresses,
-        state.aptos_client,
+        state.creditchain_client,
       );
     },
     enabled:
       connected &&
       !!accountAddress &&
       validatorAddresses.length > 0 &&
-      !!state.aptos_client,
+      !!state.creditchain_client,
   });
 
   // Combine all data

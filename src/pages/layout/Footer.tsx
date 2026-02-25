@@ -4,21 +4,21 @@ import GithubLogo from "../../assets/github.svg?react";
 import DiscordLogo from "../../assets/discord.svg?react";
 import TwitterLogo from "../../assets/twitter.svg?react";
 import MediumLogo from "../../assets/medium.svg?react";
-import {grey} from "../../themes/colors/libra2ColorPalette";
+import {grey} from "../../themes/colors/creditchainColorPalette";
 import SvgIcon from "@mui/material/SvgIcon";
 
-import LogoFull from "../../assets/svg/libra2_logo_labs.svg?react";
+import LogoFull from "../../assets/svg/creditchain_logo_labs.svg?react";
 import {Link} from "../../routing";
 
 const socialLinks = [
-  {title: "Git", url: "https://github.com/libra2org", icon: GithubLogo},
+  {title: "Git", url: "https://github.com/creditchainorg", icon: GithubLogo},
   {
     title: "Discord",
     url: "https://discord.gg/EsM3qmXVcx",
     icon: DiscordLogo,
   },
-  {title: "Twitter", url: "https://x.com/libra2/", icon: TwitterLogo},
-  {title: "Medium", url: "https://libra2.medium.com/", icon: MediumLogo},
+  {title: "Twitter", url: "https://x.com/creditchain/", icon: TwitterLogo},
+  {title: "Medium", url: "https://creditchain.medium.com/", icon: MediumLogo},
 ];
 
 export default function Footer() {
@@ -49,9 +49,9 @@ export default function Footer() {
           >
             <Link
               color="inherit"
-              to="https://www.libra2.org/"
+              to="https://www.creditchain.org/"
               target="_blank"
-              title="Libra2 Research"
+              title="CreditChain Research"
               sx={{width: "8rem", mr: {md: 2}}}
             >
               <LogoFull />
@@ -69,7 +69,7 @@ export default function Footer() {
               >
                 © {new Date().getFullYear()}{" "}
                 <Box component="span" sx={{whiteSpace: "nowrap"}}>
-                  Libra2 Research
+                  CreditChain Research
                 </Box>
               </Typography>
               <Stack
@@ -79,7 +79,7 @@ export default function Footer() {
               >
                 <Link
                   color="inherit"
-                  to="https://www.libra2.org/privacy"
+                  to="https://www.creditchain.org/privacy"
                   target="_blank"
                   sx={{
                     fontSize: "0.8rem",
@@ -90,7 +90,7 @@ export default function Footer() {
                 </Link>
                 <Link
                   color="inherit"
-                  to="https://www.libra2.org/terms"
+                  to="https://www.creditchain.org/terms"
                   target="_blank"
                   sx={{
                     fontSize: "0.8rem",

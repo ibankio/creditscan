@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
 import {Box, BoxProps, useTheme} from "@mui/material";
-import {grey} from "../themes/colors/libra2ColorPalette";
+import {grey} from "../themes/colors/creditchainColorPalette";
 import {StyleContext} from "../pages/Analytics/NetworkInfo/NetworkInfo";
 
 interface CardProps extends BoxProps {

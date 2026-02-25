@@ -17,17 +17,17 @@ function getIsGraphqlClientSupportedFor(networkName: NetworkName): boolean {
 
 function getIndexerBaseUrl(networkName: NetworkName): string | undefined {
   const defaultIndexer =
-    import.meta.env.LIBRA2_INDEXER_URL ??
-    import.meta.env.LIBRA2_INDEXER_HTTP ??
+    import.meta.env.CREDITCHAIN_INDEXER_URL ??
+    import.meta.env.CREDITCHAIN_INDEXER_HTTP ??
     import.meta.env.VITE_INDEXER_URL ??
     import.meta.env.INDEXER_URL ??
-    import.meta.env.VITE_LIBRA2_INDEXER_HTTP ??
-    "https://indexer.libra2.org";
+    import.meta.env.VITE_CREDITCHAIN_INDEXER_HTTP ??
+    "https://indexer.creditchain.org";
 
   if (networkName === "local" || networkName === "localnet") {
     return (
-      import.meta.env.VITE_LIBRA2_LOCAL_INDEXER_HTTP ??
-      import.meta.env.LIBRA2_LOCAL_INDEXER_HTTP ??
+      import.meta.env.VITE_CREDITCHAIN_LOCAL_INDEXER_HTTP ??
+      import.meta.env.CREDITCHAIN_LOCAL_INDEXER_HTTP ??
       defaultIndexer
     );
   }

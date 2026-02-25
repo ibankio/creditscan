@@ -9,7 +9,7 @@ import {
 import {SxProps} from "@mui/system";
 import {Theme} from "@mui/material/styles";
 import SouthIcon from "@mui/icons-material/South";
-import {libra2Color} from "../../themes/colors/libra2ColorPalette";
+import {creditchainColor} from "../../themes/colors/creditchainColorPalette";
 
 interface GeneralTableHeaderCellProps {
   header: React.ReactNode;
@@ -59,7 +59,7 @@ export default function GeneralTableHeaderCell({
         "&.MuiTableSortLabel-root .MuiTableSortLabel-icon": {
           marginLeft: 0,
           marginRight: 0.5,
-          color: libra2Color,
+          color: creditchainColor,
         },
         flexDirection: "row-reverse",
       }}
