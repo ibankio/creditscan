@@ -52,9 +52,13 @@ export default function Footer() {
               to="https://www.creditchain.org/"
               target="_blank"
               title="CreditChain Research"
-              sx={{width: "8rem", mr: {md: 2}}}
+              sx={{
+                width: {xs: "11rem", md: "13rem"},
+                mr: {md: 2},
+                display: "block",
+              }}
             >
-              <LogoFull />
+              <LogoFull style={{width: "100%", height: "auto"}} />
             </Link>
             <Grid container direction="row" padding="0" spacing={2}>
               <Typography

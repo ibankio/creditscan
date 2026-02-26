@@ -28,3 +28,6 @@ src/assets/svg/aptos_explorer_svg.zip
 src/assets/svg/*.svg
 # or more broadly:
 **/*.svg
+
+**/*.png
+**/*.ico

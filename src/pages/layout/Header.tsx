@@ -5,7 +5,7 @@ import Container from "@mui/material/Container";
 import NetworkSelect from "./NetworkSelect";
 import {useColorMode} from "../../context";
 import {useMediaQuery, useTheme} from "@mui/material";
-import LogoIcon from "../../assets/svg/creditchain_logo_icon.svg?react";
+import LogoWordmark from "../../assets/svg/creditchain_logo_labs.svg?react";
 import IconLight from "../../assets/svg/icon_light.svg?react";
 import IconDark from "../../assets/svg/icon_dark.svg?react";
 import Button from "@mui/material/Button";
@@ -119,12 +119,14 @@ export default function Header() {
               color="inherit"
               underline="none"
               sx={{
-                width: {xs: "60px", sm: "60px", md: "80px"},
-                height: {xs: "60px", sm: "60px", md: "80px"},
+                width: {xs: "136px", sm: "152px", md: "180px"},
+                height: {xs: "30px", sm: "34px", md: "40px"},
+                display: "flex",
+                alignItems: "center",
                 marginRight: "auto",
               }}
             >
-              <LogoIcon style={{width: "100%", height: "100%"}} />
+              <LogoWordmark style={{width: "100%", height: "100%"}} />
             </Link>
 
             <Nav />
